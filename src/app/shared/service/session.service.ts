@@ -7,23 +7,17 @@ export class SessionService {
 
   constructor() { }
 
-
-  getLocalCartData(){
-    return sessionStorage.getItem('product');
+  setCartData(product: any) {
+    localStorage.setItem('cartData', JSON.stringify(product));
   }
-
-  setLocalCartData(data:any){
-    sessionStorage.setItem('product',data);
-    return true;
+  setTotalCartItemsCount(totalCartItemsCount: any) {
+    localStorage.setItem('cartItemsCount', totalCartItemsCount);
   }
-
-  getLocalListData(){
-    return sessionStorage.getItem('list');
+  getCartData() {
+    localStorage.getItem('cartData');
   }
-
-  setLocalListData(data:any){
-    sessionStorage.setItem('list',data);
-    return true;
+  getTotalCartItemsCount() {
+    localStorage.getItem('cartItemsCount');
   }
 
 }

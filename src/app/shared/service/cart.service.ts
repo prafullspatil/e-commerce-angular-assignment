@@ -27,6 +27,8 @@ export class CartService {
   addToCart(product: any) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
+    this.sessionService.setCartData(this.cartItemList);
+    this.sessionService.setTotalCartItemsCount(this.cartItemList.length);
     // this.getTotalPrice();
     console.log(this.cartItemList)
   }
